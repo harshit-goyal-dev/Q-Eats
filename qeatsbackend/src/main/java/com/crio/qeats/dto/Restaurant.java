@@ -39,6 +39,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Restaurant {
+    @JsonIgnore
+    private String id;
     private String restaurantId;
     private String name;
     private String city;
