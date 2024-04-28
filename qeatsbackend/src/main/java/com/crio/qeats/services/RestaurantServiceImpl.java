@@ -51,13 +51,18 @@ public class RestaurantServiceImpl implements RestaurantService {
   }
 
   private Double findServingRadiusByCurrentTime(Double peakHoursServingRadiusInKms,Double normalHoursServingRadiusInKms,LocalTime currentTime){
-     if(isTimeBetween(currentTime, "07:59:59", "10:00:01") || isTimeBetween(currentTime, "12:59:59", "14:00:01")|| isTimeBetween(currentTime, "18:59:59", "21:00:01"))return peakHoursServingRadiusInKms;
+     if(isTimeBetween(currentTime, "07:59:59", "10:00:01") 
+          || isTimeBetween(currentTime, "12:59:59", "14:00:01")
+          || isTimeBetween(currentTime, "18:59:59", "21:00:01"))
+            return peakHoursServingRadiusInKms;
 
      return normalHoursServingRadiusInKms;
 
   }
   private boolean isTimeBetween(LocalTime currentTime, String startTime, String endTime){
-    if(currentTime.isAfter(LocalTime.parse(startTime)) && currentTime.isBefore(LocalTime.parse(endTime)))return true;
+    if(currentTime.isAfter(LocalTime.parse(startTime)) 
+      && currentTime.isBefore(LocalTime.parse(endTime)))
+        return true;
 
     return false;
   }
