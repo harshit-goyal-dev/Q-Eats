@@ -9,8 +9,10 @@ package com.crio.qeats.services;
 
 import com.crio.qeats.exchanges.GetRestaurantsRequest;
 import com.crio.qeats.exchanges.GetRestaurantsResponse;
+import org.springframework.stereotype.Service;
 import java.time.LocalTime;
 
+@Service
 public interface RestaurantService {
 
   /**

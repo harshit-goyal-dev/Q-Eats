@@ -27,6 +27,8 @@ import org.springframework.web.bind.annotation.RestController;
 // Remember, annotations have various "targets". They can be class level, method level or others.
 
 @Log4j2
+@RestController
+@RequestMapping(RestaurantController.RESTAURANT_API_ENDPOINT)
 public class RestaurantController {
 
   public static final String RESTAURANT_API_ENDPOINT = "/qeats/v1";
@@ -45,9 +47,10 @@ public class RestaurantController {
 
   @GetMapping(RESTAURANTS_API)
   public ResponseEntity<GetRestaurantsResponse> getRestaurants(
-       GetRestaurantsRequest getRestaurantsRequest) {
+       @Valid GetRestaurantsRequest getRestaurantsRequest) {
 
     log.info("getRestaurants called with {}", getRestaurantsRequest);
+   // if(getRestaurantsRequest==null || getRestaurantsRequest.getLatitude()==null || getRestaurantsRequest.getLongitude()==null)return ResponseEntity.badRequest().body(null);
     GetRestaurantsResponse getRestaurantsResponse;
 
       //CHECKSTYLE:OFF

@@ -9,6 +9,7 @@ package com.crio.qeats.exchanges;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,13 +25,19 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+//@JsonIgnoreProperties(ignoreUnknown = true)
 public class GetRestaurantsRequest {
 
     @NotNull
+    @Min(-90)
+    @Max(90)
     private Double latitude;
 
     @NotNull
+    @Min(-90)
+    @Max(90)
     private Double longitude;
+
     private String seachFor;
     
     public GetRestaurantsRequest(Double latitude, Double longitude){
