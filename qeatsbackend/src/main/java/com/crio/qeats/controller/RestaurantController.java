@@ -50,7 +50,6 @@ public class RestaurantController {
        @Valid GetRestaurantsRequest getRestaurantsRequest) {
 
     log.info("getRestaurants called with {}", getRestaurantsRequest);
-   // if(getRestaurantsRequest==null || getRestaurantsRequest.getLatitude()==null || getRestaurantsRequest.getLongitude()==null)return ResponseEntity.badRequest().body(null);
     GetRestaurantsResponse getRestaurantsResponse;
 
       //CHECKSTYLE:OFF
