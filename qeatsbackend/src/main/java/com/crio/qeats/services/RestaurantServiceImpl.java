@@ -67,5 +67,13 @@ public class RestaurantServiceImpl implements RestaurantService {
 
     return false;
   }
+  // @Override
+  // public GetRestaurantsResponse findAllRestaurantsCloseBy(
+  //     GetRestaurantsRequest getRestaurantsRequest, LocalTime currentTime) {
+
+
+  // }
+
+
 }
 

@@ -13,6 +13,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
 public interface RestaurantRepository extends MongoRepository<RestaurantEntity, String> {
-
+    // public List<RestaurantEntity> findAll();
 }
 
